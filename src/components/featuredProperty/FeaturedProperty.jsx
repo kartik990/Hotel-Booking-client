@@ -5,7 +5,7 @@ import "./featuredProperty.css";
 
 const FeaturedProperty = () => {
   const { data, loading, error } = useFetch(
-    "/api/hotels/?featured=true&limit=4"
+    "https://hotel-booking-server-chh7.onrender.com/api/hotels/?featured=true&limit=4"
   );
 
   const img = [
@@ -29,7 +29,6 @@ const FeaturedProperty = () => {
         ) : (
           <>
             {data &&
-              console.log(data) &&
               data.map((item, i) => {
                 return (
                   <div className="fpItem" key={item._id}>

@@ -11,7 +11,9 @@ import React from "react";
 
 const Reserve = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
-  const { data } = useFetch(`/api/hotels/room/${hotelId}`);
+  const { data } = useFetch(
+    `https://hotel-booking-server-chh7.onrender.com/api/hotels/room/${hotelId}`
+  );
   const { dates } = useContext(SearchContext);
 
   console.log(data);
@@ -58,9 +60,12 @@ const Reserve = ({ setOpen, hotelId }) => {
     try {
       await Promise.all(
         selectedRooms.map((roomId) => {
-          const res = axios.put(`/api/rooms/availability/${roomId}`, {
-            dates: alldates,
-          });
+          const res = axios.put(
+            `https://hotel-booking-server-chh7.onrender.com/api/rooms/availability/${roomId}`,
+            {
+              dates: alldates,
+            }
+          );
           return res.data;
         })
       );

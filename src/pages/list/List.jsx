@@ -20,9 +20,9 @@ const List = () => {
   const [max, setMax] = useState(undefined);
 
   const { data, error, loading, reFetch } = useFetch(
-    `http://localhost:8800/api/hotels?city=${destination}&min=${min || 0}&max=${
-      max || 9999
-    }`
+    `https://hotel-booking-server-chh7.onrender.com/api/hotels?city=${destination}&min=${
+      min || 0
+    }&max=${max || 9999}`
   );
 
   const handleClick = () => {

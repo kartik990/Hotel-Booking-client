@@ -44,7 +44,7 @@ const Hotel = () => {
   const id = location.pathname.split("/")[2];
 
   const { data, error, loading, reFetch } = useFetch(
-    `http://localhost:8800/api/hotels/find/${id}`
+    `https://hotel-booking-server-chh7.onrender.com/api/hotels/find/${id}`
   );
 
   const handleClick = (idx) => {

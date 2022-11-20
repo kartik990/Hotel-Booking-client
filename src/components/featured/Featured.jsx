@@ -5,7 +5,7 @@ import useFetch from "../../hooks/useFetch";
 
 const Featured = () => {
   const { data, loading, error } = useFetch(
-    "/api/hotels/countByCity?cities=london,madrid,berlin"
+    "https://hotel-booking-server-chh7.onrender.com/api/hotels/countByCity?cities=london,madrid,berlin"
   );
 
   return (

@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import useFetch from "../../hooks/useFetch";
 import "./featuredProperty.css";
 
@@ -16,6 +17,10 @@ const FeaturedProperty = () => {
     "https://www.itchotels.com/content/dam/itchotels/in/umbrella/storii/hotels/storiishantimorada-goa/image/headmast/desktop/pool-day-shot.jpg",
   ];
 
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+
   return (
     <div className="fp">
       <div className="fpContainer">
@@ -24,22 +29,25 @@ const FeaturedProperty = () => {
         ) : (
           <>
             {data &&
-              data.map((item, i) => (
-                <div className="fpItem" key={item._id}>
-                  <img src={img[i]} alt="" className="fpImg" />
-                  <div className="fpItemData">
-                    <span className="fpName">{item.name}</span>
-                    <span className="fpCity">{item.city}</span>
-                    <span className="fpPrice">
-                      Starting Price...${item.cheapestPrice}
-                    </span>
-                    <div className="rating">
-                      <button>{item.rating || 8.5}</button>
-                      <span>excellent</span>
+              console.log(data) &&
+              data.map((item, i) => {
+                return (
+                  <div className="fpItem" key={item._id}>
+                    <img src={img[i]} alt="" className="fpImg" />
+                    <div className="fpItemData">
+                      <span className="fpName">{item.name}</span>
+                      <span className="fpCity">{item.city}</span>
+                      <span className="fpPrice">
+                        Starting Price...${item.cheapestPrice}
+                      </span>
+                      <div className="rating">
+                        <button>{item.rating || 8.5}</button>
+                        <span>excellent</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
           </>
         )}
       </div>

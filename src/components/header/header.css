@@ -32,12 +32,13 @@ body {
 .headerListItem {
   display: flex;
   align-items: center;
+  padding: 12px;
   gap: 10px;
 }
 
-.headerListItem.active {
+.headerListItem:hover {
   border: 1px solid white;
-  padding: 10px;
+  padding: 10px 12px 10px 10px;
   border-radius: 20px;
 }
 

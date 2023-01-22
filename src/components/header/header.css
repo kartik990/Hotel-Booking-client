@@ -10,7 +10,10 @@ body {
   position: relative;
 }
 .headerTitle {
-  margin-top: 10px;
+  /* font-family: "Kalam", cursive; */
+  font-family: "Marck Script", cursive;
+
+  margin-top: 25px;
 }
 
 .headerContainer {

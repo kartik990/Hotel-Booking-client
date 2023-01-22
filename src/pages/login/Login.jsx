@@ -39,6 +39,7 @@ function Login() {
   return (
     <div className="login">
       <div className="lContainer">
+        <h1 className="beta"> Beta version Admin login Only...</h1>
         <input
           type="text"
           placeholder="username"
